@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bpr:release xmlns:bpr="http://www.blueprism.co.uk/product/release">
+    <bpr:name>PDF VBO (PDFSharp)</bpr:name>
+    <bpr:release-notes>This is the initial release for the PDF VBO using PDFSharp.dll library</bpr:release-notes>
+    <bpr:created>2019-07-23 18:30:00Z</bpr:created>
+    <bpr:package-id>-1</bpr:package-id>
+    <bpr:package-name>&lt;Adhoc Package&gt;</bpr:package-name>
+    <bpr:user-created-by>admin</bpr:user-created-by>
+    <bpr:contents count="2">
+        <object id="aab4d5b2-3b17-4df8-981c-2863572067aa" name="PDF VBO (PDFSharp)" xmlns="http://www.blueprism.co.uk/product/process"><process name="PDF VBO (PDFSharp)" version="1.0" bpversion="6.10.6.6525" narrative="This is a business object created in order to help to interact with PDF documents." byrefcollection="true" type="object" runmode="Exclusive"><appdef><element name="Application Root"><id>02265b66-f152-4327-9f32-2df23964baeb</id><type>Application</type><basetype>Application</basetype><datatype>unknown</datatype><diagnose>False</diagnose></element></appdef><view><camerax>-36</camerax><cameray>0</cameray><zoom version="2">1.875</zoom></view><preconditions /><endpoint narrative="" /><subsheet subsheetid="d3c7055a-94ce-4685-ac3d-f6e76e1154f6" type="CleanUp" published="True"><name>Clean Up</name><view><camerax>0</camerax><cameray>0</cameray><zoom version="2">1.25</zoom></view></subsheet><subsheet subsheetid="a24f62b5-4868-4a85-bb5b-b03fb273fe08" type="Normal" published="True"><name>Split PDF Document</name><view><camerax>0</camerax><cameray>0</cameray><zoom version="2">1.25</zoom></view></subsheet><subsheet subsheetid="9749f972-62b2-4d4a-949a-a713655fbafb" type="Normal" published="True"><name>Merge PDF Documents</name><view><camerax>0</camerax><cameray>0</cameray><zoom version="2">1.25</zoom></view></subsheet><stage stageid="e638105c-f45e-42eb-afb3-4ca0568201e8" name="Start" type="Start"><loginhibit /><display x="15" y="-105" /><onsuccess>9b530704-849a-4aa5-8f8b-f00c26bc2449</onsuccess></stage><stage stageid="9b530704-849a-4aa5-8f8b-f00c26bc2449" name="End" type="End"><loginhibit /><display x="15" y="90" /></stage><stage stageid="e18ac2a8-6540-4e8f-bfab-c8f9ec2846aa" name="Stage1" type="ProcessInfo"><display x="-240" y="-150" w="270" h="120" /><references><reference>System.dll</reference><reference>System.Data.dll</reference><reference>System.Xml.dll</reference><reference>System.Drawing.dll</reference><reference>PdfSharp.dll</reference></references><imports><import>System</import><import>System.Drawing</import><import>System.Data</import><import>PdfSharp.Pdf</import><import>PdfSharp.Pdf.IO</import></imports><language>csharp</language><globalcode><![CDATA[]]></globalcode><code><![CDATA[]]></code></stage><stage stageid="11d61c40-fad8-401d-93c2-ce851b38bfc3" name="Clean Up" type="SubSheetInfo"><subsheetid>d3c7055a-94ce-4685-ac3d-f6e76e1154f6</subsheetid><display x="-195" y="-105" w="150" h="90" /></stage><stage stageid="568da4e8-953c-4463-a1f1-4cb4a410ff10" name="Start" type="Start"><subsheetid>d3c7055a-94ce-4685-ac3d-f6e76e1154f6</subsheetid><loginhibit /><display x="15" y="-105" /><onsuccess>88f367af-b8e3-40f8-826d-9a52e4d7b3bd</onsuccess></stage><stage stageid="88f367af-b8e3-40f8-826d-9a52e4d7b3bd" name="End" type="End"><subsheetid>d3c7055a-94ce-4685-ac3d-f6e76e1154f6</subsheetid><loginhibit /><display x="15" y="90" /></stage><stage stageid="d05c260a-b603-43f0-97e6-1945ff75720d" name="Split PDF Document" type="SubSheetInfo"><subsheetid>a24f62b5-4868-4a85-bb5b-b03fb273fe08</subsheetid><display x="-360" y="-180" w="450" h="180" /></stage><stage stageid="ace037d1-b5a4-468d-9885-20b54802bf96" name="Start" type="Start"><subsheetid>a24f62b5-4868-4a85-bb5b-b03fb273fe08</subsheetid><loginhibit /><display x="15" y="-195" /><inputs><input type="text" name="Input File Path" stage="Input File Path" /><input type="text" name="Output Folder" stage="Output Folder" /><input type="text" name="Output File Name Prefix" stage="Output File Name Prefix" /></inputs><onsuccess>9b523958-a442-468c-97be-0a925854b9b3</onsuccess></stage><stage stageid="f7f6446e-3767-4f5b-867d-26ebb4c53cdc" name="End" type="End"><subsheetid>a24f62b5-4868-4a85-bb5b-b03fb273fe08</subsheetid><loginhibit /><display x="15" y="-30" /><outputs><output type="text" name="Message" stage="Message" /></outputs></stage><stage stageid="71df14ef-200a-4de9-ae3b-c6c541b0615b" name="" type="Note"><subsheetid>d3c7055a-94ce-4685-ac3d-f6e76e1154f6</subsheetid><narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative><display x="-180" y="60" w="180" h="230" /></stage><stage stageid="0f5349e2-b7ba-4958-9bc8-7f34535c723e" name="" type="Note"><narrative>Initialise Page
+
+This is an optional page where you might choose to perform some initialisation tasks after your business object is loaded.
+
+The initialise action will be called automatically immediately after loading your business object.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than after the creation of the object.</narrative><display x="-240" y="30" w="180" h="230" /></stage><stage stageid="c1f6fc82-f76e-4db1-9fe1-0fcedaa7e941" name="Inputs" type="Block"><subsheetid>a24f62b5-4868-4a85-bb5b-b03fb273fe08</subsheetid><loginhibit /><display x="-540" y="-75" w="375" h="135" /><font family="Segoe UI" size="10" style="Regular" color="FF6600" /></stage><stage stageid="7ea53c01-e945-4197-8aba-c99183e0cbaf" name="Outputs" type="Block"><subsheetid>a24f62b5-4868-4a85-bb5b-b03fb273fe08</subsheetid><loginhibit /><display x="-495" y="90" w="270" h="90" /><font family="Segoe UI" size="10" style="Regular" color="99CC00" /></stage><stage stageid="d3807e3f-0b56-46e3-a96d-183f95f0f9a0" name="Input File Path" type="Data"><subsheetid>a24f62b5-4868-4a85-bb5b-b03fb273fe08</subsheetid><loginhibit /><display x="-435" y="-30" w="180" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="2ad4ab00-2797-4fee-94e5-f5e4dbb2999a" name="Output File Name Prefix" type="Data"><subsheetid>a24f62b5-4868-4a85-bb5b-b03fb273fe08</subsheetid><loginhibit /><display x="-375" y="30" w="180" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="2ad20b42-7181-43a1-970d-8552dca00cc3" name="Output Folder" type="Data"><subsheetid>a24f62b5-4868-4a85-bb5b-b03fb273fe08</subsheetid><loginhibit /><display x="-270" y="-30" w="180" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="07e45a3c-7ac6-4237-b00f-ff1aecc5368a" name="Message" type="Data"><subsheetid>a24f62b5-4868-4a85-bb5b-b03fb273fe08</subsheetid><loginhibit /><display x="-375" y="135" w="120" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="9b523958-a442-468c-97be-0a925854b9b3" name="Split Document" type="Code"><subsheetid>a24f62b5-4868-4a85-bb5b-b03fb273fe08</subsheetid><loginhibit /><display x="15" y="-120" /><inputs><input type="text" name="Input File Path" expr="[Input File Path]" /><input type="text" name="Output Folder" expr="[Output Folder]" /><input type="text" name="Output File Name Prefix" expr="[Output File Name Prefix]" /></inputs><outputs><output type="text" name="Message" stage="Message" /></outputs><onsuccess>f7f6446e-3767-4f5b-867d-26ebb4c53cdc</onsuccess><code><![CDATA[try{
+	
+	// Reading The Input PDF File :
+	PdfDocument inputFileDocument = PdfReader.Open(Input_File_Path,PdfDocumentOpenMode.Import);
+	
+	// Iterating Through Pages In The Input Document File :
+	for( int index = 0; index < inputFileDocument.PageCount; index++){
+		
+		// Creating Output Document Object :
+		PdfDocument outputFileDocument = new PdfDocument();
+		
+		// Setting Attributes For Output Document Object :
+		outputFileDocument.Version = inputFileDocument.Version;
+		outputFileDocument.Info.Creator = inputFileDocument.Info.Creator;
+		outputFileDocument.Info.Title = String.Format("Page {0} of {1}",index+1,inputFileDocument.Info.Title);
+		
+		// Adding Page To The Output Document Object :
+		outputFileDocument.AddPage(inputFileDocument.Pages[index]);
+		
+		// Save Output Document File :
+		outputFileDocument.Save(Output_Folder+"\\"+String.Format("{0}_{1}.pdf",Output_File_Name_Prefix, index+1));
+		
+		}
+		
+		Message = "SUCCESS : PDF document got splitted successfully.";
+	
+
+}catch(Exception ex){
+	
+	Message = String.Format("ERROR : {0}", ex.Message.ToString());
+	
+	}]]></code></stage><stage stageid="2e562c6c-afd5-4577-8276-6b3196be5b1c" name="Merge PDF Documents" type="SubSheetInfo"><subsheetid>9749f972-62b2-4d4a-949a-a713655fbafb</subsheetid><display x="-360" y="-180" w="450" h="180" /></stage><stage stageid="82335fe7-b31b-4991-98f9-467d5e4593dd" name="Start" type="Start"><subsheetid>9749f972-62b2-4d4a-949a-a713655fbafb</subsheetid><loginhibit /><display x="15" y="-195" /><inputs><input type="text" name="Input Folder" stage="Input Folder" /><input type="text" name="Output File Path" stage="Output File Path" /></inputs><onsuccess>6cb635a7-443c-47ff-a389-4238d4161e3c</onsuccess></stage><stage stageid="4b5cb083-3142-4165-930b-c2e3e191a20e" name="End" type="End"><subsheetid>9749f972-62b2-4d4a-949a-a713655fbafb</subsheetid><loginhibit /><display x="15" y="-30" /><outputs><output type="text" name="Message" stage="Message" /></outputs></stage><stage stageid="f3a4285d-2b4e-47ea-b53d-259369543602" name="Inputs" type="Block"><subsheetid>9749f972-62b2-4d4a-949a-a713655fbafb</subsheetid><loginhibit /><display x="-540" y="-75" w="375" h="75" /><font family="Segoe UI" size="10" style="Regular" color="FF6600" /></stage><stage stageid="991a6ea6-1808-44be-bc3b-98717aca7750" name="Outputs" type="Block"><subsheetid>9749f972-62b2-4d4a-949a-a713655fbafb</subsheetid><loginhibit /><display x="-480" y="15" w="270" h="90" /><font family="Segoe UI" size="10" style="Regular" color="99CC00" /></stage><stage stageid="be55e277-0aaa-47e4-a185-8ae462991730" name="Input Folder" type="Data"><subsheetid>9749f972-62b2-4d4a-949a-a713655fbafb</subsheetid><loginhibit /><display x="-435" y="-30" w="180" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="c83b07e4-a0f9-4046-abb9-4a962c8c6fa5" name="Output File Path" type="Data"><subsheetid>9749f972-62b2-4d4a-949a-a713655fbafb</subsheetid><loginhibit /><display x="-270" y="-30" w="180" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="ab93f60a-3eb8-4370-bdc0-90c0b037cbc8" name="Message" type="Data"><subsheetid>9749f972-62b2-4d4a-949a-a713655fbafb</subsheetid><loginhibit /><display x="-360" y="60" w="120" h="30" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="6cb635a7-443c-47ff-a389-4238d4161e3c" name="Merge PDF Files" type="Code"><subsheetid>9749f972-62b2-4d4a-949a-a713655fbafb</subsheetid><loginhibit /><display x="15" y="-120" /><inputs><input type="text" name="Input Folder" expr="[Input Folder]" /><input type="text" name="Output File Path" expr="[Output File Path]" /></inputs><outputs><output type="text" name="Message" stage="Message" /></outputs><onsuccess>4b5cb083-3142-4165-930b-c2e3e191a20e</onsuccess><code><![CDATA[try
+	{
+		// Create a new PDF document to hold the merged PDF
+		PdfDocument outputDocument = new PdfDocument();
+
+		// Get all PDF files in the input folder
+		string[] pdfFiles = System.IO.Directory.GetFiles(Input_Folder, "*.pdf");
+
+		foreach (string pdfFile in pdfFiles)
+		{
+			// Open each PDF document
+			PdfDocument inputDocument = PdfReader.Open(pdfFile, PdfDocumentOpenMode.Import);
+
+			// Add each page of the input PDF document to the output PDF document
+			foreach (PdfPage page in inputDocument.Pages)
+			{
+				outputDocument.AddPage(page);
+			}
+		}
+
+		// Save the merged PDF document to the specified output file path
+		outputDocument.Save(Output_File_Path);
+		
+		Message = "SUCCESS : PDF document got merged successfully.";
+
+	}
+catch (Exception ex)
+{
+	Message = String.Format("ERROR : {0}", ex.Message.ToString());
+}]]></code></stage></process></object>
+        <object-group id="7fab2a6d-8c10-49d1-981d-71de558dccbd" name="Visual Business Objects" isDefaultGroup="False" xmlns="http://www.blueprism.co.uk/product/object-group">
+            <members>
+                <object id="aab4d5b2-3b17-4df8-981c-2863572067aa" />
+            </members>
+        </object-group>
+    </bpr:contents>
+</bpr:release>
